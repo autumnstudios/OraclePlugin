@@ -1,0 +1,5 @@
+name: Oracle
+version: '${project.version}'
+main: com.autumnstudios.oracle.Oracle
+api-version: 1.19
+description: Command System
