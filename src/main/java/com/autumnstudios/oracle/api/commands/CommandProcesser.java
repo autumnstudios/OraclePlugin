@@ -18,6 +18,12 @@ import java.util.List;
 
 public class CommandProcesser {
 
+    public static void processMultible(PluginOracle plugin, Class<?>...commandCls) {
+        for (Class<?> cls : commandCls) {
+            process(cls, plugin);
+        }
+    }
+
     public static void process(Class<?> commandCls, PluginOracle plugin) {
         for (Method m : commandCls.getDeclaredMethods()) {
             if (m.isAnnotationPresent(Command.class)) {
@@ -65,6 +71,7 @@ public class CommandProcesser {
         OracleCommandExecuter executer = new OracleCommandExecuter(command.getLabel());
         executer.setOracleCommandExecuter(m, commandCls);
         map.register(cmd.label(), executer);
+
 
     }
 

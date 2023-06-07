@@ -32,5 +32,6 @@ public final class Oracle extends JavaPlugin implements PluginOracle {
     @Override
     public JavaPlugin getJavaPlugin() {
         return this;
+
     }
 }
